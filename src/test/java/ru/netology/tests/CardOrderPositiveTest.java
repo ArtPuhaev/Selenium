@@ -33,7 +33,7 @@ public class CardOrderPositiveTest {
 
     @Test
     void shouldGetSucessfulResponse() {
-        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("John Иванов");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иван Иванов");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79999999999");
         driver.findElement(By.cssSelector("[data-test-id='agreement']")).click();
         driver.findElement(By.cssSelector("button")).click();
@@ -41,6 +41,7 @@ public class CardOrderPositiveTest {
         String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void ShouldUseDoubleName() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Жан-Карл Иванов");
@@ -51,6 +52,7 @@ public class CardOrderPositiveTest {
         String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void shouldUseDoubleSurname() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иван Иванов-Талицкий");
@@ -61,6 +63,7 @@ public class CardOrderPositiveTest {
         String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText();
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     void shouldUseSpaceBetweenName() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Чон Гук Мин");
